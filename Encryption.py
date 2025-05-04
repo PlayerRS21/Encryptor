@@ -4,7 +4,7 @@ import time
 
 import os
 
-random_characters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," "]
+random_characters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," ",",",'"',"'",".",";",":","<",">","?","/","[","]","{","}","|","-","_","+","="]
 
 subsituation = [")","!","@","#","$","%","^","&","*","(",")"]
 
@@ -80,7 +80,7 @@ def encrypt():
 
     for i in range(0,len(word)):
         if word[i] in subsituation:
-            print("Enter Correct Word to encode it DON'T USE ANY SIGNS IN THE WORD!!!")
+            print("Enter Correct Word to encode it DON'T USE these in words !@#$%^&*()")
             encrypt()
 
     else:

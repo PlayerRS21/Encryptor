@@ -9,11 +9,15 @@ random_characters=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","
 subsituation = [")","!","@","#","$","%","^","&","*","(",")"]
 
 def decrypt():
+
     word = input("Enter Your Code to decode it or quit to exit decoding. ")
 
     for i in range(0,len(word)):
+
         if word[i] in random_characters:
+
             print("Enter Correct Code to Decode it...")
+
             decrypt()
 
     else:
@@ -33,6 +37,7 @@ def decrypt():
             # print(lv1_word) #trimed word
 
             for i in range(0,len(word)):
+
                 lv1_word = lv1_word + str(subsituation.index(word[i]))
 
             # print(lv1_word)  # lv3_word  =  4644 {23 08 13 20 37} 1235
@@ -40,6 +45,7 @@ def decrypt():
             lv2_word = ""
 
             for i in range(4,len(lv1_word)-4):
+
                 lv2_word = lv2_word + lv1_word[i]
 
             # print(lv2_word) #Trimmed Word 23 08 13 20 37
@@ -51,9 +57,13 @@ def decrypt():
             lv4_word=""
 
             for i in range(0,len(lv3_word)): #  ['23', '08', '13', '20', '37']
+
                 if int(lv3_word[i][0]) == 0:
+
                     lv4_word += random_characters[int(lv3_word[i][1])]
+
                 else:
+
                     lv4_word += random_characters[int(lv3_word[i])]
 
             # print(lv4_word)
@@ -61,7 +71,9 @@ def decrypt():
             lv5_word = ""
 
             lv5_word += lv4_word[-1]
+
             for i in range(1,len(lv4_word)-1):
+
                 lv5_word += lv4_word[i]
 
             lv5_word += lv4_word[0]
@@ -76,11 +88,15 @@ def decrypt():
 
 
 def encrypt():
+
     word = input("Enter Your Word to encode it or quit to exit encoding. ")
 
     for i in range(0,len(word)):
+
         if word[i] in subsituation:
-            print("Enter Correct Word to encode it DON'T USE these in words !@#$%^&*()")
+
+            print("Enter Correct Word to encode it DON'T USE these in words ['!,@,#,$,%,^,&,*,(,),']")
+
             encrypt()
 
     else:
